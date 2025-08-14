@@ -19,5 +19,6 @@ git add <file-name> or/ git add .
 
 Commits the files from the staging area to your local repository(before push thing)
 ---------------------------------------------------------------------------------------
-git commit -m "Your descriptive message"
+"git commit -m "Your descriptive message"
+
 
