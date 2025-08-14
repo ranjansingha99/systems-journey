@@ -1,6 +1,9 @@
 3 stages: Working Directory(local machine) -> Staging Area(commit) -> Repository(pushed to store)
 
 
+
+
+
 Commit authorship — Git needs to know who made each change
 ---------------------------------------------------------------
 git config --global user.name "Your Name"
