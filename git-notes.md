@@ -21,6 +21,8 @@ The process of saving changes in Git involves three stages. Understanding this i
 ### Essential Commands for the Workflow:
 
 * `git init`: Initializes a new Git repository in your current folder. (Run only once per project).
+* `git remote add origin <URL>.git`: Add the remote repository, giving it a nickname, origin.
+* `git remote -v`: Verify the remote URL
 * `git clone [url]`: Copies an entire repository from a remote location (like GitHub) to your computer.
 * `git status`: Your most important command. It tells you the status of your files in the working directory and staging area.
 * `git add [file]` or `git add .`: Moves changes from the working directory to the staging area.
