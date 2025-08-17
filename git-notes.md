@@ -33,6 +33,8 @@ The process of saving changes in Git involves three stages. Understanding this i
 ### Essential Commands for the Workflow:
 
 * `git init`: Initializes an existing directory as a Git repository. (Run only once per project).
+* `git remote add origin <URL>.git`: Add the remote repository to your working directory, giving it a nickname, origin.
+* `git remote -v`: Verify the remote URL.
 * `git clone [url]`: Retrieves an entire repository from a hosted location via a URL.
 * `git status`: Your most important command. It shows modified files in your working directory and files staged for your next commit.
 * `git add [file]` or `git add .`: Adds a file as it looks now to your next commit (this is called "staging").
@@ -40,8 +42,6 @@ The process of saving changes in Git involves three stages. Understanding this i
 * `git diff`: Shows the differences between what has changed in your working directory but is not staged.
 * `git diff-staged`: Shows the differences between what is staged and what was last committed.
 * `git commit -m "Your descriptive message"`: Commits your staged content as a new snapshot in the repository's history.
-* `git remote add origin <URL>.git`: Add the remote repository to your working directory, giving it a nickname, origin.
-* `git remote -v`: Verify the remote URL.
 
 ---
 
