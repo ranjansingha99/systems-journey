@@ -21,11 +21,11 @@ The process of saving changes in Git involves three stages. Understanding this i
 ### Essential Commands for the Workflow:
 
 * `git init`: Initializes a new Git repository in your current folder. (Run only once per project).
-* `git remote add origin <URL>.git`: Add the remote repository, giving it a nickname, origin.
+* `git remote add origin <URL>.git`: Add the remote repository to your working directory, giving it a nickname, origin.
 * `git remote -v`: Verify the remote URL
 * `git clone [url]`: Copies an entire repository from a remote location (like GitHub) to your computer.
 * `git status`: Your most important command. It tells you the status of your files in the working directory and staging area.
-* `git add [file]` or `git add .`: Moves changes from the working directory to the staging area.
+* `git add [file_name]` or `git add .`: Moves changes from the working directory to the staging area.
 * `git commit -m "Your descriptive message"`: Takes the snapshot from the staging area and saves it permanently to your repository's history.
 
 ---
@@ -44,6 +44,9 @@ The main, official branch is usually called **`main`**. You create a feature bra
 * **Do your work**: Make your changes and create commits on this new branch. The `main` branch remains untouched.
 * `git checkout main`: When done, switch back to the `main` branch.
 * `git merge [branch-name]`: Combines the history and changes from your feature branch into the `main` branch.
+* `git branch -m main`: Rename the 'master' branch to 'main', provided that it's already `git checkout [master]`. `-m` flag stands for "move," which is how Git renames a branch.
+* `git push -u origin main`: Push the new 'main' branch to the remote repository. `-u` flag sets main as the default upstream branch, so in the future, you can just use `git push` in stead of `git push origin main` /or `git pull` in stead of `git pull origin main`.
+* `git push origin --delete master`: Delete the old 'master' branch from the remote repository
 
 ---
 
@@ -55,8 +58,10 @@ A **remote** is a version of your repository hosted on the internet. **`origin`*
 
 ### Remote Commands:
 
-* `git push`: Uploads your committed changes from your local repository to the remote repository. This is how you share your work.
+* `git push <nick_name> <branch_name>`: Uploads your committed changes from your local repository to the remote repository. This is how you share your work. Ex: `git push origin main`
+* `git pull = git fetch + git merge`
 * `git pull`: Downloads the latest changes from the remote repository and automatically merges them into your current local branch. This is how you get updates from others.
+* `git pull <nick_name> <branch_name>`: pull the latest changes from origin’s <branch_name> branch into my current branch. Ex: `git pull origin main`
 
 ---
 
@@ -67,7 +72,7 @@ These commands are powerful and can alter your project history. Use them with ca
 ### Rewriting History (⚠️ Use Caution)
 
 * `git rebase [branch]`: Instead of merging, this command moves your branch's starting point to the tip of another branch. It rewrites your commits to create a cleaner, linear history. Use this to update your feature branch with the latest changes from `main` before merging.
-* `git reset --hard [commit]`: A "demolition" command. It erases all commits and changes after a specific commit, resetting your entire project to that past state. Use this to completely discard recent, local mistakes that you have not pushed.
+* `git reset --hard [commit]`: A "demolition" command. It erases(deletes) all commits and changes after a specific commit, resetting your entire project to that past state. Use this to completely discard recent, local mistakes that you have not pushed.
 
 ### Saving Unfinished Work
 
